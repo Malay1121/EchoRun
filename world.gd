@@ -29,6 +29,9 @@ func _ready():
 	for i in 3:
 		spawn_chunk()
 
+func get_echo_node():
+	return echo_node
+
 func _process(delta):
 	if is_game_over:
 		return 
@@ -85,3 +88,5 @@ func despawn_chunks():
 			
 		if chunk.global_position.x < despawn_x_limit:
 			chunk.queue_free()
+func deduct_swap_penalty():
+	max_x_achieved *= 0.75

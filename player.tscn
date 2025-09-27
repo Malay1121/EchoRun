@@ -43,3 +43,7 @@ shape = SubResource("CapsuleShape2D_hqtel")
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_hqtel")
 animation = &"idle"
+
+[node name="SwapCooldownTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
