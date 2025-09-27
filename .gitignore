@@ -1,0 +1,12 @@
+# Godot 4+ specific ignores
+.godot/
+.vscode/
+
+# Godot-specific ignores
+*.translation
+*.remap
+*.gdnlib
+*.gdns
+
+# Mono-specific ignores
+export_presets.cfg
