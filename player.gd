@@ -9,7 +9,9 @@ var death_y_position = 1000
 var just_swapped = false
 var can_jump = true
 var can_swap = true
+signal first_move_made
 
+var has_moved_once = false
 # Get the gravity value from the project's settings
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -32,9 +34,14 @@ func _physics_process(delta: float) -> void:
 	# Get input for left/right movement
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
+		if not has_moved_once:
+			first_move_made.emit()
+			has_moved_once = true 
+
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+
 
 	# Update animations
 	if is_on_floor():

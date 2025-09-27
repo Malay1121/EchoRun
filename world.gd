@@ -17,17 +17,21 @@ var max_x_achieved = 0
 var is_game_over = false
 
 func _ready():
+
 	player.player_died.connect(game_over)
 	game_over_ui.restart_requested.connect(restart_game)
+	
+	player.first_move_made.connect(start_echo_timer)
+
+	for i in 3:
+		spawn_chunk()
+func start_echo_timer():
 	var spawn_timer = Timer.new()
 	spawn_timer.wait_time = 2.0
 	spawn_timer.one_shot = true
 	spawn_timer.timeout.connect(spawn_echo)
 	add_child(spawn_timer)
 	spawn_timer.start()
-	
-	for i in 3:
-		spawn_chunk()
 
 func get_echo_node():
 	return echo_node
