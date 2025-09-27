@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cdp5e6ya207lo"]
+[gd_scene load_steps=8 format=3 uid="uid://cdp5e6ya207lo"]
 
 [ext_resource type="PackedScene" uid="uid://b6xugrvn728i2" path="res://player.tscn" id="1_f3sb7"]
+[ext_resource type="Script" uid="uid://cqj2054agk712" path="res://world.gd" id="1_tlwt5"]
 [ext_resource type="Texture2D" uid="uid://dbs84nwwunux1" path="res://assets/Tilemap/tilemap.png" id="2_fj7yv"]
 [ext_resource type="PackedScene" uid="uid://dou3eqda4mtyo" path="res://echo.tscn" id="3_tlwt5"]
 
@@ -245,6 +246,8 @@ texture = ExtResource("2_fj7yv")
 sources/0 = SubResource("TileSetAtlasSource_tlwt5")
 
 [node name="World" type="Node2D"]
+script = ExtResource("1_tlwt5")
+echo_scene = ExtResource("3_tlwt5")
 
 [node name="Player" parent="." instance=ExtResource("1_f3sb7")]
 position = Vector2(0, -21)
@@ -261,6 +264,3 @@ shape = SubResource("RectangleShape2D_fj7yv")
 visible = false
 tile_set = SubResource("TileSet_aqk2v")
 format = 2
-
-[node name="Echo" parent="." instance=ExtResource("3_tlwt5")]
-position = Vector2(0, -21)

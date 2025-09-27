@@ -4,12 +4,15 @@ extends CharacterBody2D
 @onready var animated_sprite = $AnimatedSprite2D
 @export var delay_msec = 5000
 
+func _ready():
+	collision_shape.disabled = true
+
 func _physics_process(delta: float) -> void:
 	var target_timestamp = Time.get_ticks_msec() - delay_msec
 	
 	if target_timestamp < 0:
-		self.visible = false
-		collision_shape.disabled = true
+		#self.visible = false
+		#collision_shape.disabled = true
 		return
 	
 	self.visible = true
