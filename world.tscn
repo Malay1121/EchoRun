@@ -1,13 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://cdp5e6ya207lo"]
+[gd_scene load_steps=7 format=3 uid="uid://cdp5e6ya207lo"]
 
 [ext_resource type="PackedScene" uid="uid://b6xugrvn728i2" path="res://player.tscn" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://cqj2054agk712" path="res://world.gd" id="1_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://dou3eqda4mtyo" path="res://echo.tscn" id="3_tlwt5"]
 [ext_resource type="TileSet" uid="uid://b8uwgk6xscwqt" path="res://level_tileset.tres" id="4_aqk2v"]
+[ext_resource type="PackedScene" uid="uid://yanbp5gri2as" path="res://chunks/chunk_01.tscn" id="5_036b0"]
 [ext_resource type="PackedScene" uid="uid://julgebdpqcdn" path="res://chunks/chunk_02.tscn" id="6_dwbse"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_tlwt5")
+chunks = Array[PackedScene]([ExtResource("5_036b0"), ExtResource("6_dwbse")])
 echo_scene = ExtResource("3_tlwt5")
 
 [node name="Player" parent="." instance=ExtResource("1_f3sb7")]
@@ -18,5 +20,3 @@ collision_mask = 3
 visible = false
 tile_set = ExtResource("4_aqk2v")
 format = 2
-
-[node name="Chunk02" parent="." instance=ExtResource("6_dwbse")]
