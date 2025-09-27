@@ -27,6 +27,7 @@ func _physics_process(delta: float) -> void:
 	# Handle Jump
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor() and can_jump:
 		velocity.y = JUMP_VELOCITY
+		$JumpSound.play()
 
 	if Input.is_action_just_pressed("swap") and swap_cooldown_timer.is_stopped() and can_swap:
 		perform_swap()

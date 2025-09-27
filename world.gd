@@ -50,6 +50,7 @@ func _process(delta):
 	despawn_chunks()
 
 func game_over():
+	$DieSound.play()
 	is_game_over = true
 	get_tree().paused = true
 	game_over_ui.show_with_score(int(max_x_achieved))

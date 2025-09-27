@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6xugrvn728i2"]
+[gd_scene load_steps=7 format=3 uid="uid://b6xugrvn728i2"]
 
 [ext_resource type="Script" uid="uid://cyq8gxwfh6fqd" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://dmh0fhhbcau8v" path="res://assets/Tiles/Characters/tile_0000.png" id="2_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://bi2g3r4bqck0f" path="res://assets/Tiles/Characters/tile_0001.png" id="3_i3pqv"]
+[ext_resource type="AudioStream" uid="uid://b1wmqnhckjb2i" path="res://assets/audio/jump.wav" id="4_hqtel"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hqtel"]
 radius = 11.0
@@ -47,3 +48,6 @@ animation = &"idle"
 [node name="SwapCooldownTimer" type="Timer" parent="."]
 wait_time = 10.0
 one_shot = true
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_hqtel")
