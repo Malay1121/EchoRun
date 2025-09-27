@@ -1,4 +1,5 @@
 extends CharacterBody2D
+signal player_died
 @onready var animated_sprite = $AnimatedSprite2D
 const SPEED = 100.0
 const JUMP_VELOCITY = -300.0
@@ -9,7 +10,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func _physics_process(delta: float) -> void:
 	if (global_position.y > death_y_position):
 		ActionRecorder.reset()
-		get_tree().reload_current_scene()
+		player_died.emit()
 		return
 	
 	# Add gravity ONLY if the player is in the air.
@@ -50,6 +51,6 @@ func _physics_process(delta: float) -> void:
 		if (collision.get_collider().name == "Echo"):
 			print("Game Over, player collided! GET BETTER!")
 			ActionRecorder.reset()
-			get_tree().reload_current_scene()
+			player_died.emit()
 			return
 			

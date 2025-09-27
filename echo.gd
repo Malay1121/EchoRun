@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var collision_shape = $CollisionShape2D
 @onready var animated_sprite = $AnimatedSprite2D
-@export var delay_msec = 3000
+@export var delay_msec = 2000
 
 func _ready():
 	collision_shape.disabled = true
