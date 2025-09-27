@@ -4,7 +4,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var spawn_timer = Timer.new()
-	spawn_timer.wait_time = 5.0
+	spawn_timer.wait_time = 3.0
 	spawn_timer.one_shot = true
 	
 	spawn_timer.timeout.connect(spawn_echo)

@@ -2,7 +2,7 @@ extends Node
 
 var history: Array = []
 
-const MAX_HISTORY_SECONDS = 6
+const MAX_HISTORY_SECONDS = 4
 
 func record_state(player_state: Dictionary):
 	player_state["timestamp"] = Time.get_ticks_msec()
